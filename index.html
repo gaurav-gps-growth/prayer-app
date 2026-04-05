@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="hi" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>स्तोत्र संग्रह – Hindu Prayers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root,[data-theme="light"]{
+      --text-xs:clamp(.75rem,.7rem + .25vw,.875rem);
+      --text-sm:clamp(.875rem,.8rem + .35vw,1rem);
+      --text-base:clamp(1rem,.95rem + .25vw,1.125rem);
+      --text-lg:clamp(1.125rem,1rem + .75vw,1.5rem);
+      --text-xl:clamp(1.5rem,1.2rem + 1.25vw,2rem);
+      --space-1:.25rem;--space-2:.5rem;--space-3:.75rem;--space-4:1rem;
+      --space-5:1.25rem;--space-6:1.5rem;--space-8:2rem;
+      --color-bg:#f7f6f2;--color-surface:#fbfbf9;--color-surface-2:#f3f0ec;
+      --color-border:#d4d1ca;--color-text:#28251d;--color-text-muted:#67645d;
+      --color-text-faint:#a09c95;--color-primary:#9b5a12;--color-primary-hover:#7e4708;
+      --color-primary-soft:#efe2d2;--color-chip:#ece8e1;
+      --shadow-sm:0 1px 3px rgba(0,0,0,.06);--shadow-md:0 8px 28px rgba(0,0,0,.09);
+      --shadow-card:0 2px 8px rgba(0,0,0,.05);
+      --radius-sm:.5rem;--radius-md:.9rem;--radius-lg:1.25rem;
+      --font-body:'Noto Sans Devanagari','Inter',sans-serif;
+      --font-scale:1;
+    }
+    [data-theme="dark"]{
+      --color-bg:#171614;--color-surface:#1d1b18;--color-surface-2:#24211d;
+      --color-border:#393632;--color-text:#e6e0d7;--color-text-muted:#b9b0a4;
+      --color-text-faint:#6b6560;--color-primary:#d79a52;--color-primary-hover:#e9ad68;
+      --color-primary-soft:#3a2d20;--color-chip:#2a2723;
+      --shadow-sm:0 1px 3px rgba(0,0,0,.28);--shadow-md:0 10px 32px rgba(0,0,0,.38);
+      --shadow-card:0 2px 8px rgba(0,0,0,.22);
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+    body{
+      min-height:100dvh;background:var(--color-bg);color:var(--color-text);
+      font:400 var(--text-base)/1.7 var(--font-body);
+      transition:background .25s,color .25s;
+    }
+    button,input{font:inherit;color:inherit}
+
+    /* ── LAYOUT ── */
+    .app{max-width:820px;margin:0 auto;padding:var(--space-4);padding-bottom:7rem}
+    .skip-link{position:absolute;left:-9999px}
+    .skip-link:focus{left:1rem;top:1rem;z-index:10;background:var(--color-surface);
+      padding:.5rem .75rem;border-radius:.5rem;outline:2px solid var(--color-primary)}
+
+    /* ── STICKY HEADER ── */
+    .hero{
+      position:sticky;top:0;z-index:10;
+      background:color-mix(in srgb,var(--color-bg) 88%,transparent);
+      backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+      padding-top:var(--space-3);padding-bottom:var(--space-3);
+    }
+    .hero-card{
+      background:linear-gradient(160deg,var(--color-surface),var(--color-surface-2));
+      border:1px solid var(--color-border);border-radius:var(--radius-lg);
+      padding:var(--space-5) var(--space-6);box-shadow:var(--shadow-md);
+    }
+    .topbar{
+      display:flex;align-items:flex-start;justify-content:space-between;
+      gap:var(--space-4);margin-bottom:var(--space-5);
+    }
+    .brand{display:flex;align-items:center;gap:var(--space-3);min-width:0}
+    .logo{
+      width:44px;height:44px;flex-shrink:0;border-radius:14px;
+      background:linear-gradient(135deg,var(--color-primary-soft),var(--color-surface));
+      display:grid;place-items:center;color:var(--color-primary);
+      border:1px solid color-mix(in srgb,var(--color-primary) 25%,var(--color-border));
+    }
+    .logo svg{width:22px;height:22px}
+    h1{font-size:var(--text-xl);line-height:1.15;font-weight:700}
+    .subtitle{margin-top:.2rem;color:var(--color-text-muted);font-size:var(--text-sm);max-width:34ch}
+
+    /* ── HEADER CONTROLS ── */
+    .header-controls{display:flex;gap:.45rem;align-items:center;flex-shrink:0;padding-top:.1rem}
+    .icon-btn{
+      width:40px;height:40px;border-radius:999px;
+      border:1px solid var(--color-border);background:var(--color-surface);
+      display:grid;place-items:center;cursor:pointer;
+      transition:background .15s,border-color .15s,transform .1s;
+      box-shadow:var(--shadow-sm);
+    }
+    .icon-btn:hover{background:var(--color-surface-2);border-color:var(--color-primary)}
+    .icon-btn:active{transform:scale(.93)}
+    .icon-btn:focus-visible{outline:2px solid var(--color-primary);outline-offset:2px}
+    .font-controls{
+      display:flex;align-items:center;gap:.1rem;
+      background:var(--color-surface);border:1px solid var(--color-border);
+      border-radius:999px;padding:.22rem .4rem;box-shadow:var(--shadow-sm);
+    }
+    .font-btn{
+      border:none;background:transparent;cursor:pointer;
+      padding:.2rem .5rem;border-radius:999px;font-weight:700;
+      color:var(--color-text-muted);line-height:1;font-size:.85rem;
+      transition:background .15s,color .15s;
+    }
+    .font-btn:hover{background:var(--color-primary-soft);color:var(--color-primary)}
+    .font-btn:focus-visible{outline:2px solid var(--color-primary);outline-offset:1px}
+
+    /* ── FILTER CHIPS ── */
+    .filters{display:flex;gap:var(--space-2);overflow-x:auto;padding-bottom:2px;scrollbar-width:none}
+    .filters::-webkit-scrollbar{display:none}
+    .chip{
+      display:inline-flex;align-items:center;gap:.38rem;
+      border:1px solid transparent;background:var(--color-chip);
+      color:var(--color-text-muted);border-radius:999px;
+      padding:.55rem 1rem;white-space:nowrap;cursor:pointer;
+      font-size:var(--text-sm);font-weight:500;
+      transition:background .18s,color .18s,border-color .18s,transform .1s;
+    }
+    .chip:hover{border-color:var(--color-primary);color:var(--color-primary)}
+    .chip:active{transform:scale(.96)}
+    .chip.active{background:var(--color-primary);color:#fff;border-color:transparent}
+    .chip:focus-visible{outline:2px solid var(--color-primary);outline-offset:2px}
+    .chip .cnt{
+      background:color-mix(in srgb,currentColor 18%,transparent);
+      border-radius:999px;padding:.05rem .42rem;font-size:.72em;font-weight:700;
+    }
+    .chip.active .cnt{background:rgba(255,255,255,.22)}
+
+    /* ── MAIN CONTENT ── */
+    .content{margin-top:var(--space-6);display:grid;gap:var(--space-4)}
+
+    /* Search */
+    .search-wrap{position:relative}
+    .search{
+      display:flex;align-items:center;gap:var(--space-3);
+      background:var(--color-surface);border:1.5px solid var(--color-border);
+      border-radius:var(--radius-md);padding:.85rem 1rem;
+      box-shadow:var(--shadow-sm);transition:border-color .2s,box-shadow .2s;
+    }
+    .search:focus-within{
+      border-color:var(--color-primary);
+      box-shadow:0 0 0 3px color-mix(in srgb,var(--color-primary) 14%,transparent);
+    }
+    .search input{border:none;outline:none;background:transparent;width:100%;min-width:0}
+    .search-clear{
+      position:absolute;right:.9rem;top:50%;transform:translateY(-50%);
+      border:none;background:var(--color-chip);cursor:pointer;
+      width:24px;height:24px;border-radius:50%;display:none;
+      align-items:center;justify-content:center;color:var(--color-text-muted);
+      font-size:.75rem;transition:background .15s;
+    }
+    .search-clear.visible{display:flex}
+    .search-clear:hover{background:var(--color-primary-soft);color:var(--color-primary)}
+
+    /* ── CARDS ── */
+    .card{
+      background:var(--color-surface);border:1px solid var(--color-border);
+      border-radius:var(--radius-lg);padding:var(--space-5) var(--space-6);
+      box-shadow:var(--shadow-card);
+      transition:box-shadow .22s,transform .18s;
+      animation:cardIn .28s ease both;
+    }
+    .card:hover{box-shadow:var(--shadow-md);transform:translateY(-1px)}
+    .card[hidden]{display:none}
+    @keyframes cardIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+    .card-header{
+      display:flex;justify-content:space-between;
+      gap:var(--space-4);align-items:flex-start;margin-bottom:var(--space-4);
+    }
+    .card-header-left{flex:1;min-width:0}
+    .card h2{font-size:var(--text-lg);line-height:1.25;font-weight:700}
+    .meta{font-size:var(--text-sm);color:var(--color-text-muted);margin-top:.3rem}
+    .card-actions{display:flex;gap:.4rem;flex-shrink:0;align-items:center}
+
+    /* Icon action buttons */
+    .act-btn{
+      width:34px;height:34px;border-radius:999px;
+      border:1px solid var(--color-border);background:transparent;
+      display:grid;place-items:center;cursor:pointer;
+      transition:all .18s;color:var(--color-text-faint);
+    }
+    .act-btn:hover{border-color:var(--color-primary);color:var(--color-primary);background:var(--color-primary-soft)}
+    .act-btn:active{transform:scale(.9)}
+    .act-btn:focus-visible{outline:2px solid var(--color-primary);outline-offset:2px}
+    .fav-btn.is-fav{color:#e05252;border-color:color-mix(in srgb,#e05252 40%,var(--color-border))}
+    .copy-btn.copied{color:#2e8b57;border-color:color-mix(in srgb,#2e8b57 40%,var(--color-border))}
+
+    /* Section label pill */
+    .section-label{
+      display:inline-flex;align-items:center;gap:.4rem;
+      font-size:var(--text-xs);font-weight:600;letter-spacing:.02em;
+      color:var(--color-primary);background:var(--color-primary-soft);
+      padding:.28rem .7rem;border-radius:999px;margin-bottom:var(--space-3);
+    }
+
+    /* Prayer text */
+    .prayer{
+      font-size:calc(var(--text-base) * var(--font-scale, 1));
+      line-height:2.1;white-space:pre-line;
+      color:var(--color-text);
+    }
+
+    /* Collapsible */
+    .collapsible{position:relative}
+    .collapsible-body{
+      max-height:11rem;overflow:hidden;
+      transition:max-height .45s cubic-bezier(.4,0,.2,1);
+    }
+    .collapsible-body::after{
+      content:'';position:absolute;bottom:0;left:0;right:0;height:5rem;
+      background:linear-gradient(transparent,var(--color-surface));
+      pointer-events:none;transition:opacity .3s;
+    }
+    .collapsible.open .collapsible-body{max-height:9999px}
+    .collapsible.open .collapsible-body::after{opacity:0;pointer-events:none}
+    .expand-btn{
+      margin-top:var(--space-3);width:100%;padding:.6rem 1rem;
+      border:1px solid var(--color-border);border-radius:var(--radius-sm);
+      background:var(--color-surface-2);color:var(--color-primary);
+      font-size:var(--text-sm);font-weight:600;cursor:pointer;
+      transition:background .15s,border-color .15s;
+    }
+    .expand-btn:hover{background:var(--color-primary-soft);border-color:var(--color-primary)}
+    .expand-btn:focus-visible{outline:2px solid var(--color-primary);outline-offset:2px}
+
+    /* Empty state */
+    .empty{
+      display:none;text-align:center;padding:var(--space-8) var(--space-4);
+      color:var(--color-text-muted);background:var(--color-surface);
+      border:1.5px dashed var(--color-border);border-radius:var(--radius-lg);
+    }
+    .empty-icon{font-size:2.2rem;display:block;margin-bottom:var(--space-3)}
+    .empty p{font-size:var(--text-sm);margin-top:.5rem;color:var(--color-text-faint)}
+
+    /* ── SCROLL TO TOP ── */
+    .scroll-top{
+      position:fixed;bottom:var(--space-6);right:var(--space-5);
+      width:46px;height:46px;border-radius:999px;
+      background:var(--color-primary);color:#fff;border:none;cursor:pointer;
+      box-shadow:0 4px 18px rgba(0,0,0,.22);display:grid;place-items:center;
+      opacity:0;transform:translateY(10px) scale(.88);
+      transition:opacity .25s,transform .25s;pointer-events:none;z-index:20;
+    }
+    .scroll-top.visible{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}
+    .scroll-top:hover{background:var(--color-primary-hover);transform:translateY(-2px) scale(1.04)}
+    .scroll-top:active{transform:scale(.95)}
+
+    /* ── TOAST ── */
+    .toast{
+      position:fixed;bottom:5rem;left:50%;
+      transform:translateX(-50%) translateY(6px);
+      background:var(--color-text);color:var(--color-bg);
+      padding:.55rem 1.25rem;border-radius:999px;
+      font-size:var(--text-sm);font-weight:500;
+      opacity:0;transition:opacity .22s,transform .22s;
+      pointer-events:none;z-index:50;white-space:nowrap;
+    }
+    .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+    /* ── RESPONSIVE ── */
+    @media (max-width:640px){
+      .hero-card{padding:var(--space-4) var(--space-5)}
+      .card{padding:var(--space-4) var(--space-4)}
+      .card-header{flex-wrap:wrap}
+      .topbar{align-items:center}
+      h1{font-size:clamp(1.2rem,1rem + 1.5vw,1.6rem)}
+      .subtitle{display:none}
+    }
+    @media (max-width:380px){
+      .hero-card{padding:var(--space-4)}
+      .font-controls{gap:0}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">मुख्य सामग्री पर जाएं</a>
+
+  <div class="app">
+    <header class="hero">
+      <div class="hero-card">
+        <div class="topbar">
+          <div class="brand">
+            <div class="logo" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3c2.8 2.2 4.4 4.8 4.4 7.7A4.4 4.4 0 0 1 12 15a4.4 4.4 0 0 1-4.4-4.3C7.6 7.8 9.2 5.2 12 3Z"/>
+                <path d="M12 15v6"/><path d="M8.5 18.5h7"/>
+              </svg>
+            </div>
+            <div>
+              <h1>स्तोत्र संग्रह</h1>
+              <p class="subtitle">सभी मन्त्र / स्तोत्र पूर्ण रूप से, स्क्रॉल करके आराम से पढ़ें।</p>
+            </div>
+          </div>
+
+          <div class="header-controls">
+            <div class="font-controls" role="group" aria-label="अक्षर आकार">
+              <button class="font-btn" data-font="-" aria-label="अक्षर छोटा करें">A−</button>
+              <button class="font-btn" data-font="+" aria-label="अक्षर बड़ा करें">A+</button>
+            </div>
+            <button class="icon-btn" type="button" id="themeToggle" aria-label="थीम बदलें">
+              <span aria-hidden="true" id="themeIcon">☾</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="filters" role="tablist" aria-label="श्रेणियाँ">
+          <button class="chip active" data-filter="all"     role="tab" aria-selected="true">सभी <span class="cnt"></span></button>
+          <button class="chip"        data-filter="ganesh"  role="tab" aria-selected="false">गणेश <span class="cnt"></span></button>
+          <button class="chip"        data-filter="shiv"    role="tab" aria-selected="false">शिव <span class="cnt"></span></button>
+          <button class="chip"        data-filter="vishnu"  role="tab" aria-selected="false">विष्णु / कृष्ण <span class="cnt"></span></button>
+          <button class="chip"        data-filter="lakshmi" role="tab" aria-selected="false">लक्ष्मी <span class="cnt"></span></button>
+          <button class="chip"        data-filter="durga"   role="tab" aria-selected="false">दुर्गा <span class="cnt"></span></button>
+          <button class="chip"        data-filter="hanuman" role="tab" aria-selected="false">हनुमान <span class="cnt"></span></button>
+          <button class="chip"        data-filter="fav"     role="tab" aria-selected="false">♥ प्रिय <span class="cnt"></span></button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" class="content">
+
+      <!-- Search -->
+      <div class="search-wrap">
+        <label class="search" for="searchInput">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+               style="flex-shrink:0;opacity:.55">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+          </svg>
+          <input id="searchInput" type="search" placeholder="मन्त्र या देवता खोजें…" autocomplete="off" />
+        </label>
+        <button class="search-clear" id="searchClear" aria-label="खोज साफ़ करें">✕</button>
+      </div>
+
+      <!-- ── PRAYER CARDS ── -->
+
+      <article class="card" data-cat="all general gayatri">
+        <div class="section-label">पूर्ण वेदिक</div>
+        <div class="card-header">
+          <div class="card-header-left">
+            <h2>गायत्री मन्त्र</h2>
+            <p class="meta">दैनिक जप, स्मरण और ध्यान हेतु</p>
+          </div>
+          <div class="card-actions">
+            <button class="act-btn fav-btn" aria-label="प्रिय में जोड़ें" title="प्रिय">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+            <button class="act-btn copy-btn" aria-label="कॉपी करें" title="कॉपी">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="prayer">ॐ भूर्भुवः स्वः ।
+तत्सवितुर्वरेण्यं ।
+भर्गो देवस्य धीमहि ।
+धियो यो नः प्रचोदयात् ॥</div>
+      </article>
+
+      <article class="card" data-cat="all general shiv">
+        <div class="section-label">पूर्ण श्लोक</div>
+        <div class="card-header">
+          <div class="card-header-left">
+            <h2>महामृत्युञ्जय मन्त्र</h2>
+            <p class="meta">शिव आराधना और कल्याण की प्रार्थना</p>
+          </div>
+          <div class="card-actions">
+            <button class="act-btn fav-btn" aria-label="प्रिय में जोड़ें" title="प्रिय">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+            <button class="act-btn copy-btn" aria-label="कॉपी करें" title="कॉपी">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="prayer">ॐ त्र्यम्बकं यजामहे सुगन्धिं पुष्टिवर्धनम् ।
+उर्वारुकमिव बन्धनान्मृत्योर्मुक्षीय मामृतात् ॥</div>
+      </article>
+
+      <article class="card" data-cat="all ganesh">
+        <div class="section-label">विघ्नहर्ता</div>
+        <div class="card-header">
+          <div class="card-header-left">
+            <h2>गणेश मन्त्र</h2>
+            <p class="meta">आरम्भ, बुद्धि और सिद्धि के लिए</p>
+          </div>
+          <div class="card-actions">
+            <button class="act-btn fav-btn" aria-label="प्रिय में जोड़ें" title="प्रिय">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+            <button class="act-btn copy-btn" aria-label="कॉपी करें" title="कॉपी">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="prayer">वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ ।
+निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा ॥</div>
+      </article>
+
+      <article class="card" data-cat="all hanuman">
+        <div class="section-label">बल और रक्षा</div>
+        <div class="card-header">
+          <div class="card-header-left">
+            <h2>हनुमान मन्त्र</h2>
+            <p class="meta">साहस, स्मरण और भक्ति</p>
+          </div>
+          <div class="card-actions">
+            <button class="act-btn fav-btn" aria-label="प्रिय में जोड़ें" title="प्रिय">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+            <button class="act-btn copy-btn" aria-label="कॉपी करें" title="कॉपी">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="prayer">ॐ हनुमते नमः ॥</div>
+      </article>
+
+      <article class="card" data-cat="all shiv">
+        <div class="section-label">दैनिक जप</div>
+        <div class="card-header">
+          <div class="card-header-left">
+            <h2>ॐ नमः शिवाय</h2>
+            <p class="meta">शिव उपासना का पंचाक्षरी मन्त्र</p>
+          </div>
+          <div class="card-actions">
+            <button class="act-btn fav-btn" aria-label="प्रिय में जोड़ें" title="प्रिय">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+            <button class="act-btn copy-btn" aria-label="कॉपी करें" title="कॉपी">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="prayer">ॐ नमः शिवाय ॥</div>
+      </article>
+
+      <article class="card" data-cat="all ganesh">
+        <div class="section-label">आरम्भ</div>
+        <div class="card-header">
+          <div class="card-header-left">
+            <h2>ॐ गं गणपतये नमः</h2>
+            <p class="meta">विघ्ननाश और कार्यसिद्धि के लिए</p>
+          </div>
+          <div class="card-actions">
+            <button class="act-btn fav-btn" aria-label="प्रिय में जोड़ें" title="प्रिय">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+            <button class="act-btn copy-btn" aria-label="कॉपी करें" title="कॉपी">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="prayer">ॐ गं गणपतये नमः ॥</div>
+      </article>
+
+      <article class="card" data-cat="all vishnu krishna">
+        <div class="section-label">नामस्मरण</div>
+        <div class="card-header">
+          <div class="card-header-left">
+            <h2>हरे कृष्ण महामन्त्र</h2>
+            <p class="meta">कृष्ण भक्ति और कीर्तन के लिए</p>
+          </div>
+          <div class="card-actions">
+            <button class="act-btn fav-btn" aria-label="प्रिय में जोड़ें" title="प्रिय">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+            <button class="act-btn copy-btn" aria-label="कॉपी करें" title="कॉपी">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="prayer">हरे कृष्ण हरे कृष्ण कृष्ण कृष्ण हरे हरे ।
+हरे राम हरे राम राम राम हरे हरे ॥</div>
+      </article>
+
+      <article class="card" data-cat="all vishnu krishna">
+        <div class="section-label">शरणागति</div>
+        <div class="card-header">
+          <div class="card-header-left">
+            <h2>ॐ नमो भगवते वासुदेवाय</h2>
+            <p class="meta">विष्णु / कृष्ण को पूर्ण समर्पण का मंत्र</p>
+          </div>
+          <div class="card-actions">
+            <button class="act-btn fav-btn" aria-label="प्रिय में जोड़ें" title="प्रिय">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+            <button class="act-btn copy-btn" aria-label="कॉपी करें" title="कॉपी">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="prayer">ॐ नमो भगवते वासुदेवाय ॥</div>
+      </article>
+
+      <article class="card" data-cat="all vishnu ram">
+        <div class="section-label">राम नाम</div>
+        <div class="card-header">
+          <div class="card-header-left">
+            <h2>श्री राम जय राम जय जय राम</h2>
+            <p class="meta">नामजप और शांति के लिए लोकप्रिय मंत्र</p>
+          </div>
+          <div class="card-actions">
+            <button class="act-btn fav-btn" aria-label="प्रिय में जोड़ें" title="प्रिय">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+            <button class="act-btn copy-btn" aria-label="कॉपी करें" title="कॉपी">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="prayer">श्री राम जय राम जय जय राम ॥</div>
+      </article>
+
+      <article class="card" data-cat="all general guru">
+        <div class="section-label">गुरु वन्दना</div>
+        <div class="card-header">
+          <div class="card-header-left">
+            <h2>गुरु मंत्र</h2>
+            <p class="meta">शिक्षक और सद्गुरु के प्रति कृतज्ञता</p>
+          </div>
+          <div class="card-actions">
+            <button class="act-btn fav-btn" aria-label="प्रिय में जोड़ें" title="प्रिय">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+            <button class="act-btn copy-btn" aria-label="कॉपी करें" title="कॉपी">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="prayer">गुरुर्ब्रह्मा गुरुर्विष्णुः गुरुर्देवो महेश्वरः ।
+गुरुः साक्षात् परब्रह्म तस्मै श्रीगुरवे नमः ॥</div>
+      </article>
+
+      <article class="card" data-cat="all general saraswati">
+        <div class="section-label">विद्या आरम्भ</div>
+        <div class="card-header">
+          <div class="card-header-left">
+            <h2>सरस्वती वंदना</h2>
+            <p class="meta">अध्ययन और विद्या प्राप्ति के लिए</p>
+          </div>
+          <div class="card-actions">
+            <button class="act-btn fav-btn" aria-label="प्रिय में जोड़ें" title="प्रिय">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+            <button class="act-btn copy-btn" aria-label="कॉपी करें" title="कॉपी">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="prayer">सरस्वति नमस्तुभ्यं वरदे कामरूपिणि ।
+विद्यारंभं करिष्यामि सिद्धिर्भवतु मे सदा ॥</div>
+      </article>
+
+      <article class="card" data-cat="all lakshmi">
+        <div class="section-label">समृद्धि</div>
+        <div class="card-header">
+          <div class="card-header-left">
+            <h2>महालक्ष्मी मंत्र</h2>
+            <p class="meta">धन, ऐश्वर्य और समृद्धि के लिए बीज मंत्र</p>
+          </div>
+          <div class="card-actions">
+            <button class="act-btn fav-btn" aria-label="प्रिय में जोड़ें" title="प्रिय">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+            <button class="act-btn copy-btn" aria-label="कॉपी करें" title="कॉपी">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="prayer">ॐ श्रीं महालक्ष्म्यै नमः ॥</div>
+      </article>
+
+      <article class="card" data-cat="all durga">
+        <div class="section-label">शक्ति और रक्षा</div>
+        <div class="card-header">
+          <div class="card-header-left">
+            <h2>दुर्गा मंत्र</h2>
+            <p class="meta">देवी की शरण में जाने का प्रार्थना श्लोक</p>
+          </div>
+          <div class="card-actions">
+            <button class="act-btn fav-btn" aria-label="प्रिय में जोड़ें" title="प्रिय">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+            <button class="act-btn copy-btn" aria-label="कॉपी करें" title="कॉपी">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="prayer">सर्वमङ्गलमाङ्गल्ये शिवे सर्वार्थसाधिके ।
+शरण्ये त्र्यम्बके गौरी नारायणि नमोऽस्तु ते ॥</div>
+      </article>
+
+      <article class="card" data-cat="all hanuman">
+        <div class="section-label">पूर्ण पाठ</div>
+        <div class="card-header">
+          <div class="card-header-left">
+            <h2>श्री हनुमान चालीसा</h2>
+            <p class="meta">२ दोहे + ४० चौपाइयाँ + अन्तिम दोहा (पूर्ण पाठ)</p>
+          </div>
+          <div class="card-actions">
+            <button class="act-btn fav-btn" aria-label="प्रिय में जोड़ें" title="प्रिय">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+            <button class="act-btn copy-btn" aria-label="कॉपी करें" title="कॉपी">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="collapsible" id="chalisa-collapsible">
+          <div class="collapsible-body">
+            <div class="prayer">दोहा :
+श्रीगुरु चरन सरोज रज, निज मनु मुकुरु सुधारि।
+बरनऊं रघुबर बिमल जसु, जो दायकु फल चारि।।
+बुद्धिहीन तनु जानिके, सुमिरौं पवन-कुमार।
+बल बुद्धि बिद्या देहु मोहिं, हरहु कलेस बिकार।।
+
+चौपाई :
+
+जय हनुमान ज्ञान गुन सागर।
+जय कपीस तिहुं लोक उजागर।।
+
+रामदूत अतुलित बल धामा।
+अंजनि-पुत्र पवनसुत नामा।।
+
+महाबीर बिक्रम बजरंगी।
+कुमति निवार सुमति के संगी।।
+
+कंचन बरन बिराज सुबेसा।
+कानन कुंडल कुंचित केसा।।
+
+हाथ बज्र औ ध्वजा बिराजै।
+कांधे मूंज जनेऊ साजै।
+
+संकर सुवन केसरीनंदन।
+तेज प्रताप महा जग बन्दन।।
+
+विद्यावान गुनी अति चातुर।
+राम काज करिबे को आतुर।।
+
+प्रभु चरित्र सुनिबे को रसिया।
+राम लखन सीता मन बसिया।।
+
+सूक्ष्म रूप धरि सियहिं दिखावा।
+बिकट रूप धरि लंक जरावा।।
+
+भीम रूप धरि असुर संहारे।
+रामचंद्र के काज संवारे।।
+
+लाय सजीवन लखन जियाये।
+श्रीरघुबीर हरषि उर लाये।।
+
+रघुपति कीन्ही बहुत बड़ाई।
+तुम मम प्रिय भरतहि सम भाई।।
+
+सहस बदन तुम्हरो जस गावैं।
+अस कहि श्रीपति कंठ लगावैं।।
+
+सनकादिक ब्रह्मादि मुनीसा।
+नारद सारद सहित अहीसा।।
+
+जम कुबेर दिगपाल जहां ते।
+कबि कोबिद कहि सके कहां ते।।
+
+तुम उपकार सुग्रीवहिं कीन्हा।
+राम मिलाय राज पद दीन्हा।।
+
+तुम्हरो मंत्र बिभीषन माना।
+लंकेस्वर भए सब जग जाना।।
+
+जुग सहस्र जोजन पर भानू।
+लील्यो ताहि मधुर फल जानू।।
+
+प्रभु मुद्रिका मेलि मुख माहीं।
+जलधि लांघि गये अचरज नाहीं।।
+
+दुर्गम काज जगत के जेते।
+सुगम अनुग्रह तुम्हरे तेते।।
+
+राम दुआरे तुम रखवारे।
+होत न आज्ञा बिनु पैसारे।।
+
+सब सुख लहै तुम्हारी सरना।
+तुम रक्षक काहू को डर ना।।
+
+आपन तेज सम्हारो आपै।
+तीनों लोक हांक तें कांपै।।
+
+भूत पिसाच निकट नहिं आवै।
+महाबीर जब नाम सुनावै।।
+
+नासै रोग हरै सब पीरा।
+जपत निरंतर हनुमत बीरा।।
+
+संकट तें हनुमान छुड़ावै।
+मन क्रम बचन ध्यान जो लावै।।
+
+सब पर राम तपस्वी राजा।
+तिन के काज सकल तुम साजा।
+
+और मनोरथ जो कोई लावै।
+सोइ अमित जीवन फल पावै।।
+
+चारों जुग परताप तुम्हारा।
+है परसिद्ध जगत उजियारा।।
+
+साधु-संत के तुम रखवारे।
+असुर निकंदन राम दुलारे।।
+
+अष्ट सिद्धि नौ निधि के दाता।
+अस बर दीन जानकी माता।।
+
+राम रसायन तुम्हरे पासा।
+सदा रहो रघुपति के दासा।।
+
+तुम्हरे भजन राम को पावै।
+जनम-जनम के दुख बिसरावै।।
+
+अन्तकाल रघुबर पुर जाई।
+जहां जन्म हरि-भक्त कहाई।।
+
+और देवता चित्त न धरई।
+हनुमत सेइ सर्ब सुख करई।।
+
+संकट कटै मिटै सब पीरा।
+जो सुमिरै हनुमत बलबीरा।।
+
+जै जै जै हनुमान गोसाईं।
+कृपा करहु गुरुदेव की नाईं।।
+
+जो सत बार पाठ कर कोई।
+छूटहि बंदि महा सुख होई।।
+
+जो यह पढ़ै हनुमान चालीसा।
+होय सिद्धि साखी गौरीसा।।
+
+तुलसीदास सदा हरि चेरा।
+कीजै नाथ हृदय मंह डेरा।।
+
+दोहा :
+
+पवन तनय संकट हरन, मंगल मूरति रूप।
+राम लखन सीता सहित, हृदय बसहु सुर भूप।।</div>
+          </div>
+          <button class="expand-btn" data-label="▼ पूर्ण चालीसा पढ़ें">▼ पूर्ण चालीसा पढ़ें</button>
+        </div>
+      </article>
+
+      <!-- ── NEW FULL-TEXT PRAYERS ── -->
+
+      <article class="card" data-cat="all hanuman">
+        <div class="section-label">पूर्ण बाण</div>
+        <div class="card-header">
+          <div class="card-header-left">
+            <h2>बजरंग बाण</h2>
+            <p class="meta">रक्षा, शक्ति और भय-नाश के लिए पूर्ण स्तोत्र</p>
+          </div>
+          <div class="card-actions">
+            <button class="act-btn fav-btn" aria-label="प्रिय में जोड़ें" title="प्रिय">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+            <button class="act-btn copy-btn" aria-label="कॉपी करें" title="कॉपी">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="collapsible">
+          <div class="collapsible-body">
+            <div class="prayer">दोहा
+निश्चय प्रेम प्रतीति ते, बिनय करें सनमान।
+तेहि के कारज सकल शुभ, सिद्ध करें हनुमान॥
+
+चौपाई
+जय हनुमंत संत हितकारी। सुन लीजै प्रभु अरज हमारी॥
+जन के काज बिलंब न कीजै। आतुर दौरि महा सुख दीजै॥
+जैसे कूदि सिंधु के पारा। सुरसा बदन पैठि बिस्तारा॥
+आगे जाइ लंकिनी रोका। मारेहु लात गई सुरलोका॥
+जाय बिभीषण को सुख दीन्हा। सीता निरखि परम पद लीन्हा॥
+बाग उजारि सिंधु महँ बोरा। अति आतुर यमकातर तोरा॥
+अक्षय कुमार को मारि संहारा। लूम लपेटि लंक को जारा॥
+लाह समान लंक जरि गई। जय जय धुनि सुरपुर नभ भई॥
+अब बिलंब केहि कारन स्वामी। कृपा करहु उर अंतरयामी॥
+जय अंजनि कुमार बलवंता। शंकर सुवन बीर हनुमंता॥</div>
+          </div>
+          <button class="expand-btn" data-label="▼ पूर्ण बजरंग बाण पढ़ें">▼ पूर्ण बजरंग बाण पढ़ें</button>
+        </div>
+      </article>
+
+      <article class="card" data-cat="all general saraswati">
+        <div class="section-label">पूर्ण वन्दना</div>
+        <div class="card-header">
+          <div class="card-header-left">
+            <h2>सरस्वती वंदना (पूर्ण)</h2>
+            <p class="meta">विद्या, बुद्धि और वाणी की देवी को पूर्ण अर्चना</p>
+          </div>
+          <div class="card-actions">
+            <button class="act-btn fav-btn" aria-label="प्रिय में जोड़ें" title="प्रिय">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+            <button class="act-btn copy-btn" aria-label="कॉपी करें" title="कॉपी">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="prayer">या कुन्देन्दुतुषारहारधवला या शुभ्रवस्त्रावृता
+या वीणावरदण्डमण्डितकरा या श्वेतपद्मासना।
+या ब्रह्माच्युतशंकरप्रभृतिभिर्देवैः सदा वन्दिता
+सा मां पातु सरस्वती भगवती निःशेषजाड्यापहा॥
+
+शुक्लां ब्रह्मविचार सार परमामाद्यां जगद्व्यापिनीं
+वीणा-पुस्तक-धारिणीमभयदां जाड्यान्धकारापहाम्‌।
+हस्ते स्फटिकमालिकां विदधतीं पद्मासने संस्थिताम्‌
+वन्दे तां परमेश्वरीं भगवतीं बुद्धिप्रदां शारदाम्‌॥</div>
+      </article>
+
+      <article class="card" data-cat="all lakshmi">
+        <div class="section-label">पूर्ण अष्टकम्</div>
+        <div class="card-header">
+          <div class="card-header-left">
+            <h2>श्री महालक्ष्म्यष्टकम्</h2>
+            <p class="meta">समृद्धि, सौभाग्य और मोक्ष के लिए पूर्ण आराधना</p>
+          </div>
+          <div class="card-actions">
+            <button class="act-btn fav-btn" aria-label="प्रिय में जोड़ें" title="प्रिय">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+            <button class="act-btn copy-btn" aria-label="कॉपी करें" title="कॉपी">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="collapsible">
+          <div class="collapsible-body">
+            <div class="prayer">नमस्तेऽस्तु महामाये श्रीपीठे सुरपूजिते।
+शंखचक्रगदाहस्ते महालक्ष्मि नमोऽस्तु ते॥
+
+नमस्ते गरुड़ारूढ़े कोलासुरभयंकरि।
+सर्वपापहरे देवि महालक्ष्मि नमोऽस्तु ते॥
+
+सर्वज्ञे सर्ववरदे सर्वदुष्टभयंकरि।
+सर्वदुःखहरे देवि महालक्ष्मि नमोऽस्तु ते॥
+
+सिद्धिबुद्धिप्रदे देवि भुक्तिमुक्तिप्रदायिनि।
+मन्त्रमूर्ते सदा देवि महालक्ष्मि नमोऽस्तु ते॥
+
+आद्यन्तरहिते देवि आद्यशक्तिमहेश्वरि।
+योगजे योगसम्भूते महालक्ष्मि नमोऽस्तु ते॥</div>
+          </div>
+          <button class="expand-btn" data-label="▼ पूर्ण अष्टकम् पढ़ें">▼ पूर्ण अष्टकम् पढ़ें</button>
+        </div>
+      </article>
+
+      <article class="card" data-cat="all durga">
+        <div class="section-label">सप्तशती स्तोत्र</div>
+        <div class="card-header">
+          <div class="card-header-left">
+            <h2>अर्गला स्तोत्रम्</h2>
+            <p class="meta">दुर्गा सप्तशती से — सौन्दर्य, जय और विजय की प्रार्थना</p>
+          </div>
+          <div class="card-actions">
+            <button class="act-btn fav-btn" aria-label="प्रिय में जोड़ें" title="प्रिय">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+            <button class="act-btn copy-btn" aria-label="कॉपी करें" title="कॉपी">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="collapsible">
+          <div class="collapsible-body">
+            <div class="prayer">ॐ जयन्ती मङ्गला काली भद्रकाली कपालिनी।
+दुर्गा क्षमा शिवा धात्री स्वाहा स्वधा नमोऽस्तु ते॥
+
+मधुकैटभविद्रावि विधातृवरदे नमः।
+रूपं देहि जयं देहि यशो देहि द्विषो जहि॥
+
+महिषासुरनिर्नाशि भक्तानां सुखदे नमः।
+रूपं देहि जयं देहि यशो देहि द्विषो जहि॥
+
+रक्तबीजवधे देवि चण्डमुण्डविनाशिनि।
+रूपं देहि जयं देहि यशो देहि द्विषो जहि॥
+
+देहि सौभाग्यमारोग्यं देहि मे परमं सुखम्।
+रूपं देहि जयं देहि यशो देहि द्विषो जहि॥
+
+विधेहि देवि कल्याणं विधेहि परमां श्रियम्।
+रूपं देहि जयं देहि यशो देहि द्विषो जहि॥</div>
+          </div>
+          <button class="expand-btn" data-label="▼ पूर्ण अर्गला स्तोत्र पढ़ें">▼ पूर्ण अर्गला स्तोत्र पढ़ें</button>
+        </div>
+      </article>
+
+      <article class="card" data-cat="all durga">
+        <div class="section-label">संपूर्ण आरती</div>
+        <div class="card-header">
+          <div class="card-header-left">
+            <h2>श्री अम्बे जी की आरती</h2>
+            <p class="meta">नवरात्र और सामान्य पूजा में गाई जाने वाली पारंपरिक आरती</p>
+          </div>
+          <div class="card-actions">
+            <button class="act-btn fav-btn" aria-label="प्रिय में जोड़ें" title="प्रिय">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+            <button class="act-btn copy-btn" aria-label="कॉपी करें" title="कॉपी">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="collapsible">
+          <div class="collapsible-body">
+            <div class="prayer">जय अम्बे गौरी, मैया जय श्यामा गौरी।
+तुमको निशदिन ध्यावत, हरि ब्रह्मा शिवरी॥ जय अम्बे...
+
+मांग सिंदूर बिराजत, टीको मृगमद को।
+उज्ज्वल से दो नैना, चंद्रबदन नीको॥ जय अम्बे...
+
+कनक समान कलेवर, रक्ताम्बर राजै।
+रक्तपुष्प गल माला, कण्ठन पर साजै॥ जय अम्बे...
+
+केहरि वाहन राजत, खड्ग खप्पर धारी।
+सुर-नर-मुनिजन सेवत, तिनके दुःखहारी॥ जय अम्बे...
+
+कानन कुण्डल शोभित, नासाग्रे मोती।
+कोटिक चन्द्र दिवाकर, राजत सम ज्योती॥ जय अम्बे...
+
+शुम्भ-निशुम्भ बिदारे, महिषासुर घाती।
+धूम्र विलोचन नैना, निशदिन मदमाती॥ जय अम्बे...
+
+चण्ड-मुण्ड संहारे, शोणित बीज हरे।
+मधु-कैटभ दोउ मारे, सुर भयहीन करे॥ जय अम्बे...
+
+ब्रह्माणी, रुद्राणी, तुम कमला रानी।
+आगम निगम बखानी, तुम शिव पटरानी॥ जय अम्बे...
+
+चौंसठ योगिनि मंगल गावत, नृत्य करत भैरूँ।
+बाजत ताल मृदंगा, अरु बाजत डमरूँ॥ जय अम्बे...
+
+तुम ही जग की माता, तुम ही हो भरता।
+भक्तन की दुःख हरता, सुख सम्पत्ति करता॥ जय अम्बे...
+
+भुजा चार अति शोभित, वरमुद्रा धारी।
+मनवांछित फल पावत, सेवत नर-नारी॥ जय अम्बे...
+
+कंचन थाल विराजत, अगर कपूर बाती।
+श्रीमालकेतु में राजत, कोटि रतन ज्योती॥ जय अम्बे...
+
+श्री अम्बे जी की आरती, जो कोई नर गावै।
+कहत शिवानंद स्वामी, सुख-सम्पत्ति पावै॥ जय अम्बे...
+
+〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰
+नोट: आरती के अंत में 'कपूर गौरम' मंत्र का उच्चारण कर क्षमा प्रार्थना करना शुभ माना जाता है।</div>
+          </div>
+          <button class="expand-btn" data-label="▼ संपूर्ण आरती पढ़ें">▼ संपूर्ण आरती पढ़ें</button>
+        </div>
+      </article>
+
+      <!-- Empty State -->
+      <div class="empty" id="emptyState">
+        <span class="empty-icon">🙏</span>
+        <strong>कोई मन्त्र नहीं मिला</strong>
+        <p>दूसरा शब्द या श्रेणी चुनें।</p>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Scroll to top -->
+  <button class="scroll-top" id="scrollTopBtn" aria-label="ऊपर जाएं">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+         stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <script>
+  (() => {
+    'use strict';
+
+    // ── THEME ────────────────────────────────────────────────────────────
+    const root = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const savedTheme = localStorage.getItem('st-theme');
+    const sysDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    let theme = savedTheme || (sysDark ? 'dark' : 'light');
+    function applyTheme(t) {
+      root.setAttribute('data-theme', t);
+      themeIcon.textContent = t === 'dark' ? '☀' : '☾';
+      localStorage.setItem('st-theme', t);
+    }
+    applyTheme(theme);
+    themeToggle.addEventListener('click', () => {
+      theme = theme === 'dark' ? 'light' : 'dark';
+      applyTheme(theme);
+    });
+
+    // ── FONT SIZE ────────────────────────────────────────────────────────
+    const MIN = 0.82, MAX = 1.45, STEP = 0.1;
+    let scale = parseFloat(localStorage.getItem('st-scale') || '1');
+    function applyScale() {
+      root.style.setProperty('--font-scale', scale);
+      localStorage.setItem('st-scale', scale);
+    }
+    applyScale();
+    document.querySelectorAll('.font-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        scale = btn.dataset.font === '+' ? Math.min(MAX, +(scale + STEP).toFixed(2))
+                                         : Math.max(MIN, +(scale - STEP).toFixed(2));
+        applyScale();
+        showToast(scale >= MAX ? 'अधिकतम आकार' : scale <= MIN ? 'न्यूनतम आकार' : 'अक्षर आकार बदला ✓');
+      });
+    });
+
+    // ── TOAST ────────────────────────────────────────────────────────────
+    const toastEl = document.getElementById('toast');
+    let toastTimer;
+    function showToast(msg, dur = 2000) {
+      clearTimeout(toastTimer);
+      toastEl.textContent = msg;
+      toastEl.classList.add('show');
+      toastTimer = setTimeout(() => toastEl.classList.remove('show'), dur);
+    }
+
+    // ── FAVORITES ────────────────────────────────────────────────────────
+    let favSet = new Set(JSON.parse(localStorage.getItem('st-favs') || '[]'));
+    function saveFavs() { localStorage.setItem('st-favs', JSON.stringify([...favSet])); }
+
+    // ── CARDS INIT ───────────────────────────────────────────────────────
+    const cards = [...document.querySelectorAll('.card')];
+    cards.forEach((card, i) => {
+      card.dataset.idx = i;
+
+      // Restore fav state
+      const favBtn = card.querySelector('.fav-btn');
+      if (favSet.has(i)) favBtn.classList.add('is-fav');
+
+      // Fav toggle
+      favBtn.addEventListener('click', () => {
+        if (favSet.has(i)) {
+          favSet.delete(i);
+          favBtn.classList.remove('is-fav');
+          showToast('प्रिय से हटाया गया');
+        } else {
+          favSet.add(i);
+          favBtn.classList.add('is-fav');
+          showToast('♥ प्रिय में जोड़ा गया');
+        }
+        saveFavs();
+        refreshCounts();
+        if (currentFilter === 'fav') applyFilters();
+      });
+
+      // Copy
+      card.querySelector('.copy-btn').addEventListener('click', function() {
+        const title = card.querySelector('h2').innerText;
+        const text  = card.querySelector('.prayer').innerText;
+        navigator.clipboard.writeText(title + '\n\n' + text).then(() => {
+          this.classList.add('copied');
+          this.innerHTML = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>`;
+          showToast('मन्त्र कॉपी हो गया ✓');
+          const self = this;
+          setTimeout(() => {
+            self.classList.remove('copied');
+            self.innerHTML = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>`;
+          }, 2200);
+        }).catch(() => showToast('कॉपी नहीं हो सका'));
+      });
+    });
+
+    // ── FILTERS + SEARCH ─────────────────────────────────────────────────
+    const chips = [...document.querySelectorAll('.chip')];
+    const searchInput  = document.getElementById('searchInput');
+    const searchClear  = document.getElementById('searchClear');
+    const emptyState   = document.getElementById('emptyState');
+    let currentFilter  = 'all';
+
+    function refreshCounts() {
+      chips.forEach(chip => {
+        const f = chip.dataset.filter;
+        let n;
+        if      (f === 'all') n = cards.length;
+        else if (f === 'fav') n = favSet.size;
+        else n = cards.filter(c => c.dataset.cat.includes(f)).length;
+        chip.querySelector('.cnt').textContent = n;
+      });
+    }
+    refreshCounts();
+
+    function applyFilters() {
+      const q = searchInput.value.trim().toLowerCase();
+      searchClear.classList.toggle('visible', q.length > 0);
+      let vis = 0;
+      cards.forEach((card, i) => {
+        const txt = card.innerText.toLowerCase();
+        const cat = card.dataset.cat;
+        let fMatch;
+        if      (currentFilter === 'all') fMatch = true;
+        else if (currentFilter === 'fav') fMatch = favSet.has(i);
+        else fMatch = cat.includes(currentFilter);
+        const sMatch = !q || txt.includes(q);
+        const show = fMatch && sMatch;
+        card.hidden = !show;
+        if (show) vis++;
+      });
+      emptyState.style.display = vis ? 'none' : 'block';
+    }
+
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        currentFilter = chip.dataset.filter;
+        chips.forEach(c => {
+          c.classList.toggle('active', c === chip);
+          c.setAttribute('aria-selected', String(c === chip));
+        });
+        applyFilters();
+      });
+    });
+
+    searchInput.addEventListener('input', applyFilters);
+    searchClear.addEventListener('click', () => {
+      searchInput.value = '';
+      applyFilters();
+      searchInput.focus();
+    });
+
+    // ── EXPAND / COLLAPSE (all collapsibles) ─────────────────────────────────
+    document.querySelectorAll('.expand-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const box = btn.closest('.collapsible');
+        const open = box.classList.toggle('open');
+        btn.textContent = open ? '▲ संक्षिप्त करें' : (btn.dataset.label || '▼ पूर्ण पाठ पढ़ें');
+      });
+    });
+
+    // ── SCROLL TO TOP ─────────────────────────────────────────────────────
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', () => {
+      scrollTopBtn.classList.toggle('visible', window.scrollY > 350);
+    }, { passive: true });
+    scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // Initial filter run
+    applyFilters();
+  })();
+  </script>
+</body>
+</html>
